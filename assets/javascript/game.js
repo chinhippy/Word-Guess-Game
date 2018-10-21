@@ -1,7 +1,7 @@
-//declare variables: 1. Array GPK names 2. win 3. guesses-left 4. guessed letters array
+//declare variables: 1. Array GPK names 2. win2 3. guesses-left 4. Array guessed letters 
 //5. userGuess
 
-var gpkArr = [
+  var gpkArr = [
     "adam bomb",
     "trim jim",
     "brutal bridget",
@@ -14,7 +14,7 @@ var gpkArr = [
   var winNum = 0;
   var guessLeft = 12;  
   var userGuessArr = []; //Already guessed letters
-  var computerChoiceDashes = [];
+  var computerChoiceDashes = []; //changed to underscores 
   var computerChoiceContainer = [];
   
    
@@ -27,10 +27,11 @@ var gpkArr = [
     computerChoiceDashes.push(computerChoice[i].replace(/[a-zA-Z]/g, "_"));
   
     var displayDashes = computerChoiceDashes.join(" ");
-  
+    
     computerChoiceContainer.push(computerChoice[i]);
   
     var displayLetters = computerChoiceContainer.join(" ");
+   //struggled to figure out how to implement spaces. 
   }
   
   //Displaying the underscores (initally coded with dashes, for some reason)
@@ -57,7 +58,7 @@ var gpkArr = [
     img.alt = alt;
   
     // This will add image to the <div> tag
-    document.getElementById("garbimage").appendChild(img)
+    document.getElementById("garbimage").appendChild(imgElement);
     // $("garbimage").append("gpk-image");
     console.log(img);
   }
@@ -76,32 +77,7 @@ var gpkArr = [
     var rmIndex = gpkArr.indexOf(computerChoice);
     gpkArr.splice(rmIndex, 1);
     console.log(gpkArr);
-  
-    // //Remove Image
-    // if (computerChoice === "adam bomb") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // } else if (computerChoice === "trim jim") {
-    //   imgElement.parentNode.removeChild(imgElement);
-       
-    // } else if (computerChoice === "brutal bridget") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // } else if (computerChoice === "jon pond") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // } else if (computerChoice === "dizzy dave") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // } else if (computerChoice === "termi nate") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // } else if (computerChoice === "quick lee") {
-    //   imgElement.parentNode.removeChild(imgElement);
-  
-    // }
-    show_image();
-  
+    
     //Randomly generate a new computerChoice
     computerChoice = gpkArr[Math.floor(Math.random() * gpkArr.length)];
     console.log(computerChoice);
@@ -111,14 +87,12 @@ var gpkArr = [
   
     for (i = 0; i < computerChoice.length; i++) {
       computerChoiceDashes.push(computerChoice[i].replace(/[a-zA-Z]/g, "_"));
-  
-      displayDashes = computerChoiceDashes.join(" ");
+        displayDashes = computerChoiceDashes.join(" ");
     }
   
     for (i = 0; i < computerChoice.length; i++) {
       computerChoiceContainer.push(computerChoice[i]);
-  
-      displayLetters = computerChoiceContainer.join(" ");
+        displayLetters = computerChoiceContainer.join(" ");
     }
   
     document.getElementById("word-guess").textContent = displayDashes;
@@ -182,7 +156,7 @@ var gpkArr = [
       }
   
       //reloads the page after 12 guesses are used up
-      //computerChoice will be refreshed too with another new word
+      //computerChoice will be refreshed with new word
   
       //Problem: Display the final answer even user cannot guess out the letter
   
@@ -223,10 +197,10 @@ var gpkArr = [
         buttonRestart.style.display = "block";
       }
   
-      if (displayDashes === "a d a m b o m b") {
+      if (displayDashes === "adambomb") {
         show_image("assets/images/adamBomb.jpg", 376, 410, "display: block;", "Adam Bomb");
 
-      } else if (displayDashes === "t r i m j i m") {
+      } else if (displayDashes === "trimjim") {
         show_image("assets/images/trimJim.jpg", 376, 510, "display: block;", "Trim Jim"); 
 
       } else if (displayDashes === "b r u t a l b r i d g e t") {
@@ -248,14 +222,14 @@ var gpkArr = [
       console.log("no match");
     }
   
-    //display all userGuess into html
+    //Display userGuess in html
   
     document.getElementById("letters-already-guess").textContent = userGuessArr.join(", ");
   
-    //Display guessLeft to html
+    //Display guessLeft in html
   
     document.getElementById("guess-left").textContent = guessLeft;
   
-    //Display Wins-number to html
+    //Display Wins-number in html
     document.getElementById("win-num").textContent = winNum;
   };
