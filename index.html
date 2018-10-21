@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word Guess - GPK Guess!</title>
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+    <style>
+        /* .JumboHeaderImg {
+            background-image: url("../assets/images/gpk.png");
+            background-size: cover;            
+        } */
+        .jumbotron {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #E9ECEF;
+        }
+        body {
+            font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+            background: rgb(197, 179, 176);
+            margin-bottom: 100px;
+
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="text-center">
+        <img src="assets/images/gpk.png" alt="front page imageGuess Game" height="50%" weight="100%" class="middle">
+        </div>
+        <div class="container">
+
+            <header class="display-4 text-center"> GPK Hangman </header>
+            <br>
+            <p class="lead text-center">Guess a Garbage Pail Kid Name!</p>
+            <p class="lead text-center">Press any key to get started!!!</p>
+           
+        </div>
+    </div>
+
+    <div class="container h-100">
+
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+
+                <div id="win-num"></div>
+                <h3 class="font-weight-bold">Wins</h3>
+                <br>
+                <br>
+                
+                <div id="word-guess"></div>
+                <h3 class="font-weight-bold">Current Name</h3>
+                
+                <div id="guess-left"></div>
+                <h3 class="font-weight-bold">Guesses Remaining</h3>
+               
+                <div id="letters-already-guess"></div>
+                <h3 class="font-weight-bold">Letters Already Guessed</h3>
+
+                <br>
+                <br>
+
+                <button id="tryAgain">Try Another Name!</button>
+
+                <br>
+
+                <button id="restartAgain">Restart</button>
+
+            </div>
+
+            <div id="gpk-image" class="col-md-6">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="container-fluid text-secondary text-center" id="copyright">
+
+            Copyright &#169 Snoball
+
+
+        </div>
+
+    </div>
+
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
